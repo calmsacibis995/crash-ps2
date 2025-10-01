@@ -58,3 +58,20 @@ NuPs2InitIOP(void)
 		sceSdRemoteInit();
 	}
 }
+
+/*
+ * @unimplemented
+ */
+void
+NuPs2InitVideo(int width, int height, uint16_t zbuf_format, uint32_t fb_format,
+	uint32_t video_mode)
+{
+}
+
+/*
+ * @unimplemented
+ */
+void
+NuPs2VideoSetPos(int x, int y)
+{
+}

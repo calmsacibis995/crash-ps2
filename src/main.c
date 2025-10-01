@@ -25,6 +25,27 @@ main(void)
 	Hub = &_heap_size;
 	Level = &_heap_size;
 
-	// Load IOP modules.
-	NuPs2InitIOP();
+	NuPs2InitIOP();		// Load IOP modules.
+	InitCutScenes();
+
+	// Configure video output.
+	SHEIGHT = 448;
+	SWIDTH = 640;
+	NuPs2InitVideo(640, 224, 0, 49, 2);		// TODO: Document what those params mean.
+	NuPs2VideoSetPos(0, 0);
+	MAXVPSIZEX = SWIDTH;
+	MAXVPSIZEY = SHEIGHT;
+	MINVPSIZEY = SHEIGHT / 2;
+	MINVPSIZEX = (SWIDTH * 396) / 640;
+
+	// Initialize graphics subsystems.
+	NuPs2InitVU();		// Vector units
+	NuTrigInit();		// Trignometry
+	NuVpInit();			// TODO: Figure out what "Vp" means.
+	NuTexInit();		// Textures
+	NuGobjInit();		// Game objects.
+	NuMtlInit();		// TODO: Figure out what "Mtl" means.
+	NuRndrInitEx(0x200000);		// Renderer.
+	NuFntClose();		// Font close.
+	NuLightInit();		// Lighting.
 }

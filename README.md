@@ -10,3 +10,10 @@ stubs that don't function.
 
 ## Building
 The goal is to produce an executable with the open-source, homebrew PS2SDK, available [here](https://github.com/ps2dev/ps2sdk).
+
+## Information
+ * Release year: 2001
+ * Platforms: PS2, GCN, Xbox
+ * Developer: Traveller's Tales
+ * Publisher: Universal Interactive Studios
+ * Game engine: Currently unknown, likely RenderWare (due to many functions having the `Nu*` prefix)

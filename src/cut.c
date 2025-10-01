@@ -1,0 +1,7 @@
+/*
+ * @unimplemented
+ */
+void
+InitCutScenes(void)
+{
+}
