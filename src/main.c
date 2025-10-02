@@ -10,6 +10,8 @@ void
 main(void)
 {
 	no_default_font = 0;
+
+#if !defined(CRASH_PS2_E3)
 	superbuffer_base = NuMemAllocFn(0x1200000, __FILE__, __LINE__);
 	superbuffer_end = superbuffer_base + 0x480000;
 	superbuffer_reset_base = superbuffer_base;
@@ -18,6 +20,9 @@ main(void)
 
 	// Run all game initialization routines.
 	DefaultGame();
+#else
+	OnceOnlyInit();
+#endif
 	ResetGame();
 	NuPs2Init();
 	NuFileInitEx(1, TRUE);
