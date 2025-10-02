@@ -1,0 +1,4 @@
+void
+ResetAI(void)
+{
+}
