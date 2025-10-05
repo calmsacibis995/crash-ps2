@@ -25,13 +25,23 @@ main(void)
 #endif
 	ResetGame();
 	NuPs2Init();
+#if !defined(CRASH_PS2_E3)
 	NuFileInitEx(1, TRUE);
+#else
+	NuFileInit(1);
+#endif
 
 	Hub = &_heap_size;
 	Level = &_heap_size;
 
 	NuPs2InitIOP();		// Load IOP modules.
+#if !defined(CRASH_PS2_E3)
 	InitCutScenes();
+#else
+	init_adpcm();
+	FlushIOPCommand(0);
+	TransferAllSpotFX();
+#endif
 
 	// Configure video output.
 	SHEIGHT = 448;
